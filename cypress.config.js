@@ -7,3 +7,4 @@ module.exports = defineConfig({
     baseUrl: 'https://google.com'
   },
 })
+
