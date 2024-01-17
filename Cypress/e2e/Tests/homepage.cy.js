@@ -15,8 +15,13 @@ it('Homepage - Load and input search term  ', () => {
     const createObj = new Objects
 
     // Click dashboard button, verify page load and elements
-    cy.get('svg[id="icon-dashboard"]').click()
-    cy.get('div[class="icon"]', { timeout: 60000 })
+    cy.get('textarea[name="q"]', { timeout: 60000 }).type('QA TEST')
+    cy.get('input[value="Google Search"]', { timeout: 60000 }).click()
+
+
+    // Verify search result
+    cy.get('div[data-q="What is QA in testing?"]', { timeout: 60000 }).click()
+
       
   })
 
