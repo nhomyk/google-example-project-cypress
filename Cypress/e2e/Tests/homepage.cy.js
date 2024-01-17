@@ -2,12 +2,11 @@ import Objects from '/cypress/POM/objects.js'
 beforeEach(() => {
 
   cy.session('login', () => {
-    cy.wait(500)
 
   })
 });
 
-it('Homepage e2e - Load page, verify elements', () => {
+it('Homepage - Load page, verify elements', () => {
     cy.visit('/')
     const createObj = new Objects
 
@@ -15,10 +14,11 @@ it('Homepage e2e - Load page, verify elements', () => {
     // cy.get('div[aria-label="Stay Signed out"]', { timeout: 60000 }).click()
 
     // Verify header links and
-    cy.get('a[class="MV3Tnb"]', { timeout: 60000 }).contains('About')
-    cy.get('a[class="MV3Tnb"]', { timeout: 60000 }).contains('Store')
-    cy.get('a[class="gb_F"]', { timeout: 60000 }).contains('Gmail')
-    cy.get('a[class="gb_F', { timeout: 60000 }).contains('Images')
+
+    createObj.testObjects.leftheaderbutton().contains('About')
+    createObj.testObjects.leftheaderbutton().contains('Store')
+    createObj.testObjects.rightheaderbutton().contains('Gmail')
+    createObj.testObjects.rightheaderbutton().contains('Images')
     cy.get('a[class="gb_d', { timeout: 60000 })
     cy.get('img[alt="Google', { timeout: 60000 })
 
@@ -27,11 +27,12 @@ it('Homepage e2e - Load page, verify elements', () => {
     cy.get('input', { timeout: 60000 }).contains('Feeling Lucky')
 
     // Verify footer links
-    cy.get('a[class="pHiOh', { timeout: 60000 }).contains('Advertising')
-    cy.get('a[class="pHiOh', { timeout: 60000 }).contains('Business')
-    cy.get('a[class="pHiOh', { timeout: 60000 }).contains('How Search works')
-    cy.get('a[class="pHiOh', { timeout: 60000 }).contains('Privacy')
-    cy.get('a[class="pHiOh', { timeout: 60000 }).contains('Terms')
+
+    createObj.testObjects.footerbutton().contains('Advertising')
+    createObj.testObjects.footerbutton().contains('Business')
+    createObj.testObjects.footerbutton().contains('How Search works')
+    createObj.testObjects.footerbutton().contains('Privacy')
+    createObj.testObjects.footerbutton().contains('Terms')
     cy.get('div[class="ayzqOc pHiOh', { timeout: 60000 }).contains('Settings')
 
 
