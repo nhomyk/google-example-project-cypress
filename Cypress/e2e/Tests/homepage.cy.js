@@ -7,35 +7,32 @@ beforeEach(() => {
   })
 });
 
-it('Homepage e2e - Load page, verify elements, input search term and submit  ', () => {
+it('Homepage e2e - Load page, verify elements', () => {
     cy.visit('/')
-    cy.wait(500)
     const createObj = new Objects
 
     // click Stay Signed out, button is in iFrame
     // cy.get('div[aria-label="Stay Signed out"]', { timeout: 60000 }).click()
 
-    // Verify header links
-    cy.get('a', { timeout: 60000 }).contains('About')
-    cy.get('a', { timeout: 60000 }).contains('Store')
-    cy.get('a', { timeout: 60000 }).contains('Gmail')
-    cy.get('a', { timeout: 60000 }).contains('Images')
-    cy.get('a[aria-label="Google apps"]', { timeout: 60000 })
+    // Verify header links and
+    cy.get('a[class="MV3Tnb"]', { timeout: 60000 }).contains('About')
+    cy.get('a[class="MV3Tnb"]', { timeout: 60000 }).contains('Store')
+    cy.get('a[class="gb_F"]', { timeout: 60000 }).contains('Gmail')
+    cy.get('a[class="gb_F', { timeout: 60000 }).contains('Images')
+    cy.get('a[class="gb_d', { timeout: 60000 })
+    cy.get('img[alt="Google', { timeout: 60000 })
 
-    // click google apps button, verify apps in dropdown, collapse
-    // cy.get('div[class="gb_g"]', { timeout: 60000 }).click()
-
-
-    // dropdown items are not visible
-    // cy.get('span', { timeout: 60000 }).contains('Account')
+    // Verify page buttons 
+    cy.get('input[value="Google Search', { timeout: 60000 })
+    cy.get('input', { timeout: 60000 }).contains('Feeling Lucky')
 
     // Verify footer links
-    cy.get('a', { timeout: 60000 }).contains('Advertising')
-    cy.get('a', { timeout: 60000 }).contains('Business')
-    cy.get('a', { timeout: 60000 }).contains('How Search works')
-    cy.get('a', { timeout: 60000 }).contains('Privacy')
-    cy.get('a', { timeout: 60000 }).contains('Terms')
-    cy.get('div', { timeout: 60000 }).contains('Settings')
+    cy.get('a[class="pHiOh', { timeout: 60000 }).contains('Advertising')
+    cy.get('a[class="pHiOh', { timeout: 60000 }).contains('Business')
+    cy.get('a[class="pHiOh', { timeout: 60000 }).contains('How Search works')
+    cy.get('a[class="pHiOh', { timeout: 60000 }).contains('Privacy')
+    cy.get('a[class="pHiOh', { timeout: 60000 }).contains('Terms')
+    cy.get('div[class="ayzqOc pHiOh', { timeout: 60000 }).contains('Settings')
 
 
     // Click image upload button, verify dropdown, cancel
@@ -43,21 +40,26 @@ it('Homepage e2e - Load page, verify elements, input search term and submit  ', 
    // cy.get('span[id="dragText"]', { timeout: 60000 })
     // cy.get('div[id="maskedImage"]', { timeout: 60000 })
 
+      
+  })
+
+it('Homepage - Search - Verify single search and result ', () => {
+    cy.visit('/')
+    const createObj = new Objects
+
     // Type in search term, submit
-    cy.get('textarea[name="q"]', { timeout: 60000 }).type('QA TEST')
+    cy.get('textarea[class="gLFyf"]', { timeout: 60000 }).type('QA TEST')
     cy.get('form').submit()
 
 
     // Verify search result
     cy.get('div[data-q="What is QA in testing?"]', { timeout: 60000 }).click()
-
-      
+   
   })
 
 
-it('Dashboard - Multiple Page Reload  ', () => {
+it('Homepage - Multiple Page Reload  ', () => {
     cy.visit('/')
-    cy.wait(500)
     const createObj = new Objects
 
     cy.reload()
