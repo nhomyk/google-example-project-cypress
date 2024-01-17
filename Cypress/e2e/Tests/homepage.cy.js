@@ -66,26 +66,24 @@ it('Homepage - Multiple Page Reload  ', () => {
     cy.reload()
 
     // Verify header links
-    cy.get('a', { timeout: 60000 }).contains('About')
-    cy.get('a', { timeout: 60000 }).contains('Store')
-    cy.get('a', { timeout: 60000 }).contains('Gmail')
-    cy.get('a', { timeout: 60000 }).contains('Images')
+    createObj.testObjects.leftheaderbutton().contains('About')
+    createObj.testObjects.leftheaderbutton().contains('Store')
+    createObj.testObjects.rightheaderbutton().contains('Gmail')
+    createObj.testObjects.rightheaderbutton().contains('Images')
 
     cy.reload()
 
-    // Verify header links
-    cy.get('a', { timeout: 60000 }).contains('About')
-    cy.get('a', { timeout: 60000 }).contains('Store')
-    cy.get('a', { timeout: 60000 }).contains('Gmail')
-    cy.get('a', { timeout: 60000 }).contains('Images')
+    createObj.testObjects.leftheaderbutton().contains('About')
+    createObj.testObjects.leftheaderbutton().contains('Store')
+    createObj.testObjects.rightheaderbutton().contains('Gmail')
+    createObj.testObjects.rightheaderbutton().contains('Images')
 
     cy.reload()
 
-    // Verify header links
-    cy.get('a', { timeout: 60000 }).contains('About')
-    cy.get('a', { timeout: 60000 }).contains('Store')
-    cy.get('a', { timeout: 60000 }).contains('Gmail')
-    cy.get('a', { timeout: 60000 }).contains('Images')
+    createObj.testObjects.leftheaderbutton().contains('About')
+    createObj.testObjects.leftheaderbutton().contains('Store')
+    createObj.testObjects.rightheaderbutton().contains('Gmail')
+    createObj.testObjects.rightheaderbutton().contains('Images')
 
 
    
