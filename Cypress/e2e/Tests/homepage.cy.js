@@ -10,17 +10,13 @@ it('Homepage - Load page, verify elements', () => {
     cy.visit('/')
     const createObj = new Objects
 
-    // click Stay Signed out, button is in iFrame
-    // cy.get('div[aria-label="Stay Signed out"]', { timeout: 60000 }).click()
-
-    // Verify header links and
-
+    // Verify header links
     createObj.testObjects.leftheaderbutton().contains('About')
     createObj.testObjects.leftheaderbutton().contains('Store')
     createObj.testObjects.rightheaderbutton().contains('Gmail')
     createObj.testObjects.rightheaderbutton().contains('Images')
-    cy.get('a[class="gb_d', { timeout: 60000 })
-    cy.get('img[alt="Google', { timeout: 60000 })
+    createObj.testObjects.GoogleAppsButton()
+    createObj.testObjects.GoogleLogo()
 
     // Verify page buttons 
     cy.get('input[value="Google Search', { timeout: 60000 })
@@ -33,7 +29,8 @@ it('Homepage - Load page, verify elements', () => {
     createObj.testObjects.footerbutton().contains('How Search works')
     createObj.testObjects.footerbutton().contains('Privacy')
     createObj.testObjects.footerbutton().contains('Terms')
-    cy.get('div[class="ayzqOc pHiOh', { timeout: 60000 }).contains('Settings')
+    createObj.testObjects.footerSettingsbutton().contains('Settings')
+
 
 
     // Click image upload button, verify dropdown, cancel
@@ -49,7 +46,7 @@ it('Homepage - Search - Verify single search and result ', () => {
     const createObj = new Objects
 
     // Type in search term, submit
-    cy.get('textarea[class="gLFyf"]', { timeout: 60000 }).type('QA TEST')
+    createObj.testObjects.search().type('QA TEST')
     cy.get('form').submit()
 
 
